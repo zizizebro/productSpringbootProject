@@ -12,7 +12,7 @@
             <fieldset>
                 <legend>New Supplier Form</legend>
                 <input type="hidden" name="supplierId" th:value="${supplier.supplierId}" />
-                <div class="form-group">
+                <div class="form-group" style="margin-top: 1em;">
                     <label for="supplierNumber">Supplier Number:</label>
                     <span th:if="${#fields.hasErrors('supplierNumber')}" th:errors="*{supplierNumber}"
 									class="alert alert-danger"></span>
