@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/product/product.css}" />
     <title>The Golden Dome Market - SRM - Add a New Product</title>
 </head>
-<body onload="document.querySelector('#productNumber').focus();">
+<body> <!--onload="document.querySelector('#productNumber').focus();"-->
     <th:block layout:fragment="content">
         <form id="productForm" method="post" action="/srm/secured/product/new" th:object="${product}">
             <fieldset>
@@ -19,7 +19,7 @@
                                 <label for="productNumber">Product Number</label>
                                 <span th:if="${#fields.hasErrors('productNumber')}" th:errors="*{productNumber}"
                                       class="alert alert-danger"></span>
-                                <input id="productNumber" name="productNumber" type="text" class="form-control" th:value="${product.productNumber}" required>
+                                <input id="productNumber" name="productNumber" type="text" class="form-control" th:value="${product.productNumber}" required autofocus="autofocus">
                             </div>
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -70,7 +70,7 @@
     </th:block>
     <br/>
     <br/>
-    <th:block layout:fragment="footer"></th:block>
+    <th:block layout:fragment="footer"/>
 
 </body>
 </html>
