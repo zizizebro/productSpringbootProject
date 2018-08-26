@@ -37,13 +37,16 @@ public class ProductController {
     }
 
     @GetMapping(value = "/new")
-    public ModelAndView newProductForm(Model model) {
-        ModelAndView modelAndView = new ModelAndView();
+//    public ModelAndView newProductForm(Model model) {
+    public String newProductForm(Model model) {
+//        ModelAndView modelAndView = new ModelAndView();
         List<Supplier> suppliers = supplierService.getAllSuppliers();
-        modelAndView.addObject("suppliers", suppliers);
-        modelAndView.setViewName("secured/product/new");
+//        modelAndView.addObject("suppliers", suppliers);
+//        modelAndView.setViewName("secured/product/new");
         model.addAttribute("product", new Product());
-        return modelAndView;
+        model.addAttribute("suppliers", suppliers);
+//        return modelAndView;
+        return "secured/product/new";
     }
 
     @PostMapping(value = "/new")
