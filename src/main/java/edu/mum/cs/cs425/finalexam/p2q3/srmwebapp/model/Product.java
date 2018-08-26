@@ -16,7 +16,7 @@ public class Product {
     private long productId;
 
     @NotNull(message = "* Product Number is required")
-    private long productNumber;
+    private Long productNumber;
 
     @NotNull(message = "*Product Name is required")
     @NotBlank(message = "* Product Name is required")
@@ -43,7 +43,7 @@ public class Product {
 
     public Product() { }
 
-    public Product(long productNumber, String name, double unitPrice,
+    public Product(Long productNumber, String name, double unitPrice,
                    int quantityInStock, LocalDate dateSupplied) {
         this.productNumber = productNumber;
         this.name = name;
@@ -60,11 +60,11 @@ public class Product {
         this.productId = productId;
     }
 
-    public long getProductNumber() {
+    public Long getProductNumber() {
         return productNumber;
     }
 
-    public void setProductNumber(long productNumber) {
+    public void setProductNumber(Long productNumber) {
         this.productNumber = productNumber;
     }
 

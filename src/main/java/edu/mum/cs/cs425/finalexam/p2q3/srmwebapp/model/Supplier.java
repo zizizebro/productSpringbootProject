@@ -18,7 +18,7 @@ public class Supplier {
     @NotNull(message = "* Supplier Number is required")
     @Digits(integer = 9, fraction = 0, message = "* Supplier number must be numeric; and a positive, integral value")
     @Column(name = "supplier_number", nullable = false, unique = true)
-    private int supplierNumber;
+    private Integer supplierNumber;
 
     @NotBlank(message = "* Supplier Name is required")
     private String name;
@@ -30,7 +30,7 @@ public class Supplier {
 
     public Supplier() { }
 
-    public Supplier(int supplierNumber, String name, String contactPhoneNumber) {
+    public Supplier(Integer supplierNumber, String name, String contactPhoneNumber) {
         this.supplierNumber = supplierNumber;
         this.name = name;
         this.contactPhoneNumber = contactPhoneNumber;
@@ -44,11 +44,11 @@ public class Supplier {
         this.supplierId = supplierId;
     }
 
-    public int getSupplierNumber() {
+    public Integer getSupplierNumber() {
         return supplierNumber;
     }
 
-    public void setSupplierNumber(int supplierNumber) {
+    public void setSupplierNumber(Integer supplierNumber) {
         this.supplierNumber = supplierNumber;
     }
 
