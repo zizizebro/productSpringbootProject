@@ -54,6 +54,8 @@ public class ProductController {
                                 BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("errors", bindingResult.getAllErrors());
+            List<Supplier> suppliers = supplierService.getAllSuppliers();
+            model.addAttribute("suppliers", suppliers);
             return "secured/product/new";
         }
         product = productService.addNewProduct(product);

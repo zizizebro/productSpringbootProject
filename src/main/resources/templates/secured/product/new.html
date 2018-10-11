@@ -17,8 +17,8 @@
                             <input type="hidden" name="productId" th:value="${product.productId}" />
                             <div class="form-group">
                                 <label for="productNumber">Product Number</label>
-                                <span th:if="${#fields.hasErrors('productNumber')}" th:errors="*{productNumber}"
-                                      class="alert alert-danger"></span>
+                                <small><span th:if="${#fields.hasErrors('productNumber')}" th:errors="*{productNumber}"
+                                      class="alert alert-danger"></span></small>
                                 <input id="productNumber" name="productNumber" type="text" class="form-control" th:value="${product.productNumber}" required autofocus="autofocus">
                             </div>
                             <div class="form-group">

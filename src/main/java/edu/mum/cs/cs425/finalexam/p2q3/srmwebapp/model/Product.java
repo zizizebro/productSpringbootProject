@@ -1,5 +1,6 @@
 package edu.mum.cs.cs425.finalexam.p2q3.srmwebapp.model;
 
+import edu.mum.cs.cs425.finalexam.p2q3.srmwebapp.model.validators.UniqueProductNumber;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
@@ -16,6 +17,7 @@ public class Product {
     private long productId;
 
     @NotNull(message = "* Product Number is required")
+    @UniqueProductNumber
     private Long productNumber;
 
     @NotNull(message = "*Product Name is required")
