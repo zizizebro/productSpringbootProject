@@ -32,13 +32,13 @@ public class SupplierController {
     }
 
     @GetMapping(value = "/new")
-    public String newProductForm(Model model) {
+    public String newSupplierForm(Model model) {
         model.addAttribute("supplier", new Supplier());
         return "secured/supplier/new";
     }
 
     @PostMapping(value = "/new")
-    public String addNewProduct(@Valid @ModelAttribute("supplier") Supplier supplier,
+    public String addNewSupplier(@Valid @ModelAttribute("supplier") Supplier supplier,
                                 BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("errors", bindingResult.getAllErrors());
