@@ -11,4 +11,5 @@ public interface IProductService {
     Product addNewProduct(Product product);
     Optional<Product> findByProductNumber(Long productNumber);
 
+
 }

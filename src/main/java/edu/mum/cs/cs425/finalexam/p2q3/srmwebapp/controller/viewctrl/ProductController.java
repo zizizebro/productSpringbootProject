@@ -8,14 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/srm/secured/product")
@@ -35,6 +34,7 @@ public class ProductController {
         modelAndView.setViewName("secured/product/browse");
         return modelAndView;
     }
+
 
     @GetMapping(value = "/new")
 //    public ModelAndView newProductForm(Model model) {
@@ -61,4 +61,20 @@ public class ProductController {
         product = productService.addNewProduct(product);
         return "redirect:/srm/secured/product/browse";
     }
+
+    /*@GetMapping("/pro/update")
+    public String showFormForUpdate(@RequestParam("productId") Long proId, Model theModel) {
+
+        // get the employee from the service
+        Optional<Product> theProduct = productService.findByProductNumber(proId);
+
+        // set employee as a model attribute to pre-populate the form
+        theModel.addAttribute("product", theProduct);
+
+        // send over to our form
+        return "product/new";
+    }
+
+
+*/
 }
